@@ -2,14 +2,23 @@
     // See https://go.microsoft.com/fwlink/?LinkId=733558
     // for the documentation about the tasks.json format
     "version": "2.0.0",
+    "windows": {
+        "options": {
+            "shell": {
+                "executable": "cmd.exe",
+                "args": [
+                    "/d", "/c"
+                ]
+            }
+        }
+    },
     "tasks": [
         {
             "label": "Build",
             "type": "process",
             "command": "fasm",
             "args": [
-                "${file}",
-                "${file}.exe"
+                "${file}"
             ],
             "presentation": {
                 "reveal": "always",
@@ -17,6 +26,19 @@
             },
             "group": {
                 "kind": "build",
+                "isDefault": true
+            }
+        },
+        {
+            "label": "Test",
+            "type": "shell",
+            "command": "${fileDirname}\\${fileBasenameNoExtension}.exe",
+            "presentation": {
+                "reveal": "always",
+                "panel": "new"
+            },
+            "group": {
+                "kind": "test",
                 "isDefault": true
             }
         }

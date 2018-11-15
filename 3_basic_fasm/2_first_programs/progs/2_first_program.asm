@@ -3,7 +3,7 @@
 format PE console
 entry start
 
-include 'win32a.inc' 
+include 'win32a.inc'
 
 ; ===============================================
 section '.text' code readable executable

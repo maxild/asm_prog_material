@@ -18,7 +18,7 @@ read_hex:
     push    ebx
     push    ecx
     push    edi
-    
+
     lea     edi,[ebp + .read_hex_buffer]
     mov     ecx,.MAX_BYTES_TO_READ
     call    read_line
@@ -153,7 +153,7 @@ read_line:
 
     push    ebp
     mov     ebp,esp
-    
+
     ; Keep room for locals:
     sub     esp,4*5
 
@@ -229,14 +229,14 @@ read_line:
     add     esp,4*5
     pop     ebp
     ret
-    
+
 ; ====================================
 ; Imports section:
 section '.idata' import data readable
- 
+
 library kernel,'kernel32.dll',\
         msvcrt,'msvcrt.dll'
- 
+
 import  kernel,\
         ExitProcess,'ExitProcess',\
         GetStdHandle,'GetStdHandle',\
