@@ -3,7 +3,7 @@
 format PE console
 entry start
 
-include 'win32a.inc' 
+include 'win32a.inc'
 
 ; ===============================================
 section '.text' code readable executable
@@ -23,8 +23,8 @@ start:
 ; ====================================
 ; Imports section:
 section '.idata' import data readable
- 
+
 library kernel,'kernel32.dll'
- 
+
 import  kernel,\
         ExitProcess,'ExitProcess'
